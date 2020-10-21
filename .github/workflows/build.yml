@@ -1,4 +1,4 @@
-# from https://github.com/samuelmeuli/action-electron-builder
+# from https://github.com/marketplace/actions/electron-builder-action
 name: Build/release
 
 on: push
@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest] # , windows-latest]
+        os: [windows-latest] # [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - name: Check out Git repository
@@ -30,5 +30,3 @@ jobs:
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
-          args: '-c.snap.publish=github'

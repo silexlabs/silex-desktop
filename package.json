@@ -31,11 +31,11 @@
   },
   "homepage": "https://www.silex.me",
   "devDependencies": {
-    "electron": "9.0.3",
-    "electron-builder": "22.7.0",
-    "electron-rebuild": "1.11.0"
+    "electron": "10.1.4",
+    "electron-builder": "22.9.1",
+    "electron-rebuild": "2.3.2"
   },
   "dependencies": {
-    "silex-website-builder": "silexlabs/Silex#master"
+    "silex-website-builder": "lexoyo/Silex#master"
   }
 }
