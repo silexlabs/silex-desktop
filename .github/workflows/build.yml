@@ -1,4 +1,4 @@
-# from https://github.com/samuelmeuli/action-electron-builder
+# from https://github.com/marketplace/actions/electron-builder-action
 name: Build/release
 
 on: push
@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest] # , windows-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - name: Check out Git repository
@@ -18,8 +18,13 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
-          node-version: 10
-
+          node-version: 10.19.0
+      - name: patch node gyp on windows to support Visual Studio 2019
+        shell: powershell
+        if: matrix.os == 'windows-latest'
+        run: |
+          npm install --global node-gyp@latest
+          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         with:
@@ -30,5 +35,3 @@ jobs:
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
-          args: '-c.snap.publish=github'
