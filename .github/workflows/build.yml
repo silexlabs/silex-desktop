@@ -23,6 +23,7 @@ jobs:
         shell: powershell
         if: matrix.os == 'windows-latest'
         run: |
+          npm install --g --production windows-build-tools # prevent error "Could not find any Visual Studio installation to use", found in https://stackoverflow.com/questions/57541402/node-gyp-configure-got-gyp-err-find-vs
           npm install --global node-gyp@latest
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Build/release Electron app
