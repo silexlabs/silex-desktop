@@ -4,14 +4,14 @@
   "description": "Silex website builder as a windows/mac/linux app",
   "main": "./index.js",
   "engines": {
-    "node": ">=11.5.0 <=12.22.10"
+    "node": ">=18"
   },
   "scripts": {
     "release": "",
-    "postinstall": "npm run build && electron-rebuild",
+    "postinstall": "npm run build",
     "start": "electron .",
-    "build": "pug -O env.js index.pug -o static/",
-    "electron-builder": "electron-builder"
+    "serve": "node .",
+    "build": ""
   },
   "repository": {
     "type": "git",
@@ -33,13 +33,11 @@
   },
   "homepage": "https://www.silex.me",
   "devDependencies": {
-    "electron": "10.1.5",
-    "electron-builder": "22.9.1",
-    "electron-rebuild": "2.3.2"
+    "electron": "25.2.0"
   },
   "dependencies": {
-    "pug": "^3.0.2",
-    "pug-cli": "^1.0.0-alpha6",
-    "silex-website-builder": "^2.7.48"
+    "@silexlabs/silex": "3.0.0-alpha.40",
+    "@silexlabs/silex-dashboard": "^1.0.2",
+    "livereload": "^0.9.3"
   }
 }
