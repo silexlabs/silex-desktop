@@ -1,9 +1,13 @@
-# do not commit node dependencies
-node_modules
+# Developer tools' files
+.lite_workspace.lua
 
-# this is where electron builds apps
-dist
+# Neutralinojs binaries and builds
+/bin
+/dist
 
-# this is a special folder for electron, we build assets there
-static
+# Neutralinojs client (minified)
+neutralino.js
 
+# Neutralinojs related files
+.storage
+*.log

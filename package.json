@@ -4,9 +4,12 @@
   "description": "Silex website builder as a windows/mac/linux app",
   "main": "./index.js",
   "engines": {
-    "node": ">=11.5.0 <=12.22.10"
+    "node": ">=11.5.0 <=20.19.1"
   },
+  "type": "module",
   "scripts": {
+    "build": "neu build",
+    "dev": "neu run"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,8 @@
   },
   "homepage": "https://www.silex.me",
   "devDependencies": {
+    "@neutralinojs/neu": "^11.4.0",
+    "node-neutralino": "^2.0.0"
   },
   "dependencies": {
     "@silexlabs/silex": "^3.3.1-0"
