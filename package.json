@@ -2,11 +2,13 @@
   "name": "silex-desktop",
   "version": "2.7.33",
   "description": "Silex website builder as a windows/mac/linux app",
-  "main": "./index.js",
+  "main": "./main.js",
   "engines": {
-    "node": ">=11.5.0 <=12.22.10"
+    "node": ">=20.0.0",
+    "electron": ">=36.0.0"
   },
   "scripts": {
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -26,9 +28,11 @@
     "url": "https://github.com/silexlabs/Silex/issues"
   },
   "homepage": "https://www.silex.me",
-  "devDependencies": {
-  },
+  "type": "module",
   "dependencies": {
     "@silexlabs/silex": "^3.3.1-0"
+  },
+  "devDependencies": {
+    "electron": "^36.4.0"
   }
 }
