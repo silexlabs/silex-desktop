@@ -1,3 +1,9 @@
+> [!IMPORTANT]
+> This project has moved to the Silex monorepo: https://short.silex.me/code
+>
+> Please open issues and pull requests there.
+
+
 # Silex Desktop
 
 Desktop application for [Silex](https://www.silex.me), the free/libre no-code website builder. Built with [Tauri](https://tauri.app/) v2 and the `silex-server` Rust crate.
